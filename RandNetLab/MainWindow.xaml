@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:RandNetLab"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Height="850">
     </Grid>
 </Window>
