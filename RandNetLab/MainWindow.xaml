@@ -5,7 +5,90 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RandNetLab"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Height="980">
+        Title="xRandNetLab" Height="450" Width="800">
+
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="ButtonStyle">
+            <Setter Property="Height" Value="23"></Setter>
+            <Setter Property="BorderBrush" Value="WhiteSmoke"></Setter>
+            <Setter Property="Padding" Value="10, 0"></Setter>
+            <Setter Property="Margin" Value="10"></Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.03*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Height="25" VerticalAlignment="Top" Grid.Column="0" Grid.Row="0">
+            <MenuItem Header="File">
+                <MenuItem Header="Create Research">
+                    <MenuItem Name ="Basic" Header="Basic"  Click="Basic_Click"></MenuItem>
+                    <MenuItem Name ="Evolution" Header="Evolution" Click="Evolution_Click"></MenuItem>
+                    <MenuItem Name ="Collection" Header="Collection" Click="Collection_Click"></MenuItem>
+                    <MenuItem Name ="Structural" Header="Structural" Click="Structural_Click"></MenuItem>
+                    <MenuItem Name="Activation" Header="Activation" Click="Activation_Click"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Save"></MenuItem>
+                <MenuItem Header="Settings"></MenuItem>
+                <MenuItem Header="Exit" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Analyze Options"></MenuItem>
+            <MenuItem Header="Help"></MenuItem>
+        </Menu>
+
+
+        <Grid  Name ="ListViewResearch" Grid.Column="0" Grid.Row="1" >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                <ColumnDefinition Width="0.4*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+
+            <ListView Grid.Column="0" Grid.Row="0"  Name="Research" Background="Gray" MouseRightButtonUp="Research_MouseRightButtonUp">
+                <ListView.View>
+                    <GridView AllowsColumnReorder="False">
+                        <GridViewColumn Width="100">Research</GridViewColumn>
+                        <GridViewColumn Width="100">Name</GridViewColumn>
+                        <GridViewColumn Width="100">Model</GridViewColumn>
+                        <GridView.ColumnHeaderContainerStyle>
+                            <Style BasedOn="{StaticResource {x:Type GridViewColumnHeader}}" TargetType="{x:Type GridViewColumnHeader}">
+                                <Setter Property="IsHitTestVisible" Value="False"/>
+                            </Style>
+                        </GridView.ColumnHeaderContainerStyle>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+
+            <GroupBox Grid.Column="1" Grid.Row="0"  Name="Parameters"  Header ="Parameters">
+                <DataGrid  Name="ParametersGrid" Background="Gray">
+
+                </DataGrid>
+            </GroupBox>
+        </Grid>
+        
+        <Grid Name ="Buttons" Grid.Column="0" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                <ColumnDefinition Width="0.9*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Name ="Start" Grid.Column="0"  Style="{StaticResource ButtonStyle}" Click="Start_Click" IsEnabled="False">Start</Button>
+            <Button Name ="Initial" Grid.Column="1"  Style="{StaticResource ButtonStyle}" Visibility="Hidden">Initial</Button>
+            <Button Name ="Final" Grid.Column="2"  Style="{StaticResource ButtonStyle}" Visibility="Hidden">Final</Button>
+            <Button Name ="Next" Grid.Column="3"  Style="{StaticResource ButtonStyle}" Visibility="Hidden">Next</Button>
+            <Button Name ="Previous" Grid.Column="4"  Style="{StaticResource ButtonStyle}" Visibility="Hidden">Previous</Button>
+            <ProgressBar Name ="ProgressStatus" Grid.Column="1" Minimum="0" Maximum="100" Value="15" HorizontalAlignment="Right" Width="688" Height="23" Margin="0,22" Grid.ColumnSpan="5" Visibility="Hidden"/>
+        </Grid>
+        <Canvas Visibility="Hidden" Name="mainCanvas"></Canvas>
     </Grid>
+    
 </Window>

@@ -24,5 +24,75 @@ namespace RandNetLab
         {
             InitializeComponent();
         }
+
+        private void Start_Click(object sender, RoutedEventArgs e)
+        {
+            if (Start.Content.ToString() == "Start")
+            {
+                Start.Content = "Stop";
+                ProgressStatus.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Start.Content = "Start";
+                ProgressStatus.Visibility = Visibility.Hidden;
+            }
+
+            //to do
+            System.Threading.Thread.Sleep(5000);
+
+            ProgressStatus.Visibility = Visibility.Hidden;
+            Initial.Visibility = Visibility.Visible;
+            Final.Visibility = Visibility.Visible;
+            Next.Visibility = Visibility.Visible;
+            Previous.Visibility = Visibility.Visible;
+
+            mainCanvas.Visibility = Visibility.Visible;
+            Start.IsEnabled = false;
+        }
+
+        private void Basic_Click(object sender, RoutedEventArgs e)
+        {
+            ShowCreateResearchDialog("Basic");
+        }
+
+        private void Evolution_Click(object sender, RoutedEventArgs e)
+        {
+            ShowCreateResearchDialog("Evolution");
+        }
+
+        private void Collection_Click(object sender, RoutedEventArgs e)
+        {
+            ShowCreateResearchDialog("Collection");
+        }
+
+        private void Structural_Click(object sender, RoutedEventArgs e)
+        {
+            ShowCreateResearchDialog("Structural");
+        }
+
+        private void Activation_Click(object sender, RoutedEventArgs e)
+        {
+            ShowCreateResearchDialog("Activation");
+        }
+
+        #region functions
+        private void ShowCreateResearchDialog(string researchType)
+        {
+            //to do
+
+            Initial.Visibility = Visibility.Hidden;
+            Final.Visibility = Visibility.Hidden;
+            Next.Visibility = Visibility.Hidden;
+            Previous.Visibility = Visibility.Hidden;
+            Start.IsEnabled = true;
+        }
+        #endregion
+
+        private void Research_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
+
 }
