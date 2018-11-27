@@ -39,7 +39,6 @@ namespace RandNetLab
             }
 
             //to do
-            System.Threading.Thread.Sleep(5000);
 
             ProgressStatus.Visibility = Visibility.Hidden;
             Initial.Visibility = Visibility.Visible;
