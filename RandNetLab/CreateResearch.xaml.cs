@@ -10,23 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace RandNetLab
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CreateResearch.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CreateResearch : Window
     {
-        public MainWindow()
+        public CreateResearch()
         {
             InitializeComponent();
-
-
-            CreateResearch createResearch = new CreateResearch();
-            createResearch.ShowDialog();
         }
     }
 }
