@@ -23,6 +23,10 @@ namespace RandNetLab
         public MainWindow()
         {
             InitializeComponent();
+
+
+            CreateResearch createResearch = new CreateResearch();
+            createResearch.ShowDialog();
         }
 
         private void Start_Click(object sender, RoutedEventArgs e)
