@@ -24,9 +24,6 @@ namespace RandNetLab
         {
             InitializeComponent();
 
-
-            CreateResearch createResearch = new CreateResearch();
-            createResearch.ShowDialog();
         }
 
         private void Start_Click(object sender, RoutedEventArgs e)
@@ -79,10 +76,15 @@ namespace RandNetLab
             ShowCreateResearchDialog("Activation");
         }
 
+        private void Research_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
         #region functions
         private void ShowCreateResearchDialog(string researchType)
         {
-            //to do
+            CreateResearch createResearch = new CreateResearch();
+            createResearch.ShowDialog();
 
             Initial.Visibility = Visibility.Hidden;
             Final.Visibility = Visibility.Hidden;
@@ -92,10 +94,7 @@ namespace RandNetLab
         }
         #endregion
 
-        private void Research_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
-        {
-
-        }
+       
     }
 
 }
