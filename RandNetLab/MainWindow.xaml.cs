@@ -39,7 +39,8 @@ namespace RandNetLab
                 ProgressStatus.Visibility = Visibility.Hidden;
             }
 
-            //to do
+            //to do//
+
 
             ProgressStatus.Visibility = Visibility.Hidden;
             Initial.Visibility = Visibility.Visible;
@@ -92,7 +93,6 @@ namespace RandNetLab
             Final.Visibility = Visibility.Hidden;
             Next.Visibility = Visibility.Hidden;
             Previous.Visibility = Visibility.Hidden;
-            Start.IsEnabled = true;
             Start.IsEnabled = true;
         }
         #endregion
