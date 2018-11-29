@@ -93,6 +93,7 @@ namespace RandNetLab
             Next.Visibility = Visibility.Hidden;
             Previous.Visibility = Visibility.Hidden;
             Start.IsEnabled = true;
+            Start.IsEnabled = true;
         }
         #endregion
 
