@@ -84,7 +84,9 @@ namespace RandNetLab
         private void ShowCreateResearchDialog(string researchType)
         {
             CreateResearch createResearch = new CreateResearch();
-            createResearch.ShowDialog();
+            createResearch.Owner = this;
+            createResearch.ShowInTaskbar = false;
+            createResearch.Show();
 
             Initial.Visibility = Visibility.Hidden;
             Final.Visibility = Visibility.Hidden;
